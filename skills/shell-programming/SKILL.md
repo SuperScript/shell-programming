@@ -22,7 +22,7 @@ When explicitly asked to create a Bash script.
 - Capture `$?` before it changes if you need to use it.
 - Indent with two spaces, never tabs.
 - Block keywords (do, then, else, done, fi, case, esac) start a new line.
-- Pipeline continuation: `\` at end of line, `|` starts next line aligned above.
+- Short pipelines stay on one line. Break long pipelines with `\` at end of line, `|` starts next line aligned above.
 - Braces `{` on same line after `||` or `&&`.
 
 ## Quoting Rules
@@ -176,15 +176,18 @@ done
 ```
 
 **Pipeline continuation:**
-- Use `\` at end of continued line
-- `|` starts next line, aligned with line above
+- Short pipelines stay on one line when clear and concise
+- Break with `\` at end of line and `|` starting the next when the pipeline is long, complex, or benefits from separate lines
+- When breaking, `|` starts the next line aligned with the line above
 
 ```sh
-# ✅ CORRECT
-cat "${input}" \
-| grep "pattern" \
-| sort \
-| uniq > "${output}"
+# ✅ Short pipeline - one line
+_mode deps "$@" | while read -r f
+
+# ✅ Long or complex pipeline - break for clarity
+do_json search --output=summary "$@" \
+| jq -c 'foreach .[] as $i (-1; . + 1; $i + {knm_index: .})' \
+| sort -u
 ```
 
 ## Common Mistakes
