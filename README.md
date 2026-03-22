@@ -23,6 +23,15 @@ The skill triggers when:
 
 It does **not** activate when explicitly asked to write a Bash script.
 
+## Installation
+
+Add this plugin to your Claude Code configuration:
+
+```sh
+claude plugin add superscript/shell-programming
+```
+
+
 ## License
 
 [BSD 3-Clause](LICENSE)
