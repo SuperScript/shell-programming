@@ -1,6 +1,15 @@
 ---
-name: shell-programming
-description: POSIX shell programming conventions for sh scripts (not bash). Use when: (1) Creating a shell script; (2) Updating a shell script; (3) Creating or updating files with a `.sh` extension; (3) Creating or updating files that invoke `/bin/sh` or `sh` in the shebang line. Do not use when: (1) Asked to create a Bash script.
+name: shell-programming:shell-programming
+description: >-
+  This skill should be used when the user asks to "create a shell script",
+  "write a shell script", "update a shell script", "fix a shell script",
+  or when creating or updating files with a `.sh` extension or files that
+  invoke `/bin/sh` in the shebang line. Provides POSIX shell conventions
+  including quoting rules, variable expansion, and function design. Do not
+  use when asked to create a Bash script.
+disable-model-invocation: false
+user-invocable: true
+allowed-tools: Read, Grep, Glob
 ---
 
 # Shell Programming
