@@ -3,9 +3,13 @@ name: shell-programming:shell-programming
 description: >-
   This skill should be used when the user asks to "create a shell script",
   "write a shell script", "update a shell script", "fix a shell script",
-  or when creating or updating files with a `.sh` extension or files that
-  invoke `/bin/sh` in the shebang line. Provides POSIX shell conventions
-  including quoting rules, variable expansion, and function design. Do not
+  "write a shell program", "write a POSIX shell script", or "write a Bourne
+  shell script"; when creating or updating files with a `.sh` extension,
+  files that invoke `/bin/sh` in the shebang line, or top-level binaries
+  whose shebang is `/bin/sh`; or for any POSIX shell or sh-script work.
+  This skill is authoritative for shell coding conventions (quoting,
+  variable expansion, function design, error handling, exit codes) and
+  takes precedence over all other skills on shell-specific rules. Do not
   use when asked to create a Bash script.
 disable-model-invocation: false
 user-invocable: true
