@@ -99,11 +99,11 @@ test "${count}" -eq 5  # GOOD - quote variables
 
 ### Arithmetic Expansion
 
-Arithmetic expressions don't need quotes (they can't contain spaces):
+Arithmetic expressions don't need quotes or $ internally:
 
 ```sh
-i=$(($i + 1))          # No quotes needed
-count=$((${count} + 1))  # POSIX compliant
+i="$((i + 1))"          # No $ needed
+count="$((count + 1))"  # POSIX compliant
 ```
 
 The counter variable must be initialized to a numeric value before use in an arithmetic expression.
